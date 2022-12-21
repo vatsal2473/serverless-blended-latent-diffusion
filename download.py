@@ -6,6 +6,7 @@ def download_model():
         print("Model already downloaded")
     else:
         print("Downloading model...")
+        os.makedirs(os.path.dirname('models/ldm/text2img-large/'), exist_ok=True)
         url = "https://ommer-lab.com/files/latent-diffusion/nitro/txt2img-f8-large/model.ckpt"
         r = requests.get(url, allow_redirects=True)
         open("models/ldm/text2img-large/model.ckpt", "wb").write(r.content)
