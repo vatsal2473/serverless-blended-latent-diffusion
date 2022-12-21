@@ -27,4 +27,4 @@ EXPOSE 8000
 # Add your custom app code, init() and inference()
 ADD app.py .
 
-CMD python3 -u server.py
+CMD gunicorn -w 1 --timeout 3000 --bind 127.0.0.1:8000 server:app

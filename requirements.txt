@@ -9,3 +9,6 @@ taming-transformers-rom1504
 opencv-python
 scipy
 transformers
+flask
+flask-cors
+gunicorn
