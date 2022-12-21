@@ -133,3 +133,5 @@ dmypy.json
 *.ckpt
 src/
 outputs/
+
+test1.py

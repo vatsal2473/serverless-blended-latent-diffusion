@@ -1,0 +1,11 @@
+sanic
+torch
+torchvision
+torchaudio
+omegaconf
+pytorch-lightning
+einops
+taming-transformers-rom1504
+opencv-python
+scipy
+transformers

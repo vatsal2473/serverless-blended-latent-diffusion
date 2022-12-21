@@ -10,6 +10,7 @@ from ldm.image_editor import ImageEditor
 import requests
 import shutil
 import os
+import tmpfiles
 
 def get_image_from_url(url, save_path):
 
@@ -76,11 +77,6 @@ def inference(model_inputs:dict) -> dict:
     editor = ImageEditor()
     editor.edit_image(prompt, model=model, sampler=sampler)
 
-    images = os.listdir("outputs/edit_results")
-    # buffered = BytesIO()
-    # image.save(buffered,format="JPEG")
-    # image_base64 = base64.b64encode(buffered.getvalue()).decode('utf-8')
+    res = tmpfiles.upload_data()
 
-    # # Return the results as a dictionary
-    # return {'image_base64': image_base64}
-    return {'success': images}
+    return res

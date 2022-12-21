@@ -6,13 +6,10 @@ import base64
 from io import BytesIO
 from PIL import Image
 
-model_inputs = {'prompt': 'realistic field of grass'}
+model_inputs = {'prompt': 'realistic field of grass', 
+                'input_image': 'https://tmpfiles.org/dl/474606/img.png', 
+                'mask_image': 'https://tmpfiles.org/dl/474608/mask.png'}
 
-res = requests.post('http://localhost:8000/', json = model_inputs)
+res = requests.post('https://felvintestapi.pagekite.me/', json = model_inputs)
 
-image_byte_string = res.json()["image_base64"]
-
-image_encoded = image_byte_string.encode('utf-8')
-image_bytes = BytesIO(base64.b64decode(image_encoded))
-image = Image.open(image_bytes)
-image.save("output.jpg")
+print(res.json())

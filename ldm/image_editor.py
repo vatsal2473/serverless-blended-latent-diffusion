@@ -170,8 +170,8 @@ class ImageEditor:
             help="unconditional guidance scale: eps = eps(x, empty) + scale * (eps(x, cond) - eps(x, empty))",
         )
 
-        parser.add_argument("--init_image", type=str, default="", help="a source image to edit")
-        parser.add_argument("--mask", type=str, default="", help="a mask to edit the image")
+        parser.add_argument("--init_image", type=str, default="inputs/img.png", help="a source image to edit")
+        parser.add_argument("--mask", type=str, default="inputs/mask.png", help="a mask to edit the image")
         parser.add_argument(
             "--invert_mask",
             help="Indicator enabling inverting the input mask",
